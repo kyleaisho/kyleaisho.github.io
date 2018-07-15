@@ -1,26 +1,36 @@
 const SELECTED = 'selected';
+const FADEOUTDOWN = 'fadeOutDown';
+const FADEINUP = 'fadeInUp';
+const MAIN_SECTION = 'main-section';
 const HIDDEN = 'hidden';
-const Sections = [
-  '#about',
-  '#projects',
-  '#contact',
-];
 
 function getElementByInnerText(text) {
   return document.querySelector(`#${text.toLowerCase()}`);
 }
 
 function updateSections(selectedSection) {
-  // Get all non-selected sections
-  const sectionsExceptCurr = Array.from(document.querySelectorAll(Sections.join(', ')))
-                                  .filter(item => !selectedSection || item !==selectedSection);
-  sectionsExceptCurr.forEach(section => {
-    section.classList.add(HIDDEN);
-  });
-
-  if (selectedSection) {
-    selectedSection.classList.remove(HIDDEN);
+  // Get the previous visible section
+  const prevElem = document.querySelector('.main-section:not(.hidden), .main-section.fadeInUp');
+  const fadeIn = () => {
+    if (selectedSection) {
+      selectedSection.classList.remove(HIDDEN);
+      selectedSection.classList.remove(FADEOUTDOWN);
+      selectedSection.classList.add(FADEINUP);
+    }
   }
+
+  if (prevElem) {
+    prevElem.classList.remove(FADEINUP);
+    prevElem.addEventListener('animationend', () => {
+      prevElem.classList.add(HIDDEN);
+      fadeIn();
+    }, {once: true});
+
+    prevElem.classList.add(FADEOUTDOWN);
+  } else {
+    fadeIn();
+  }
+
 }
 
 function unselectNavigationItems(currentElem) {
