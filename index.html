@@ -12,6 +12,7 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="index.js"></script>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./fade.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
@@ -35,9 +36,9 @@
           </a>
         </div>
         <div style="display:flex;margin-left:auto" class="navbar-end">
-          <a href="#" class="navbar-item">About</a>
-          <a href="#" class="navbar-item">Projects</a>
-          <a href="#" class="navbar-item">Contact</a>
+          <a class="navbar-item" onclick="navbarItemClick(this)">About</a>
+          <a href="#" class="navbar-item" onclick="navbarItemClick(this)">Projects</a>
+          <a href="#" class="navbar-item" onclick="navbarItemClick(this)">Contact</a>
         </div>
       </div>
     </nav>
@@ -47,13 +48,13 @@
       <h1 class="title animate fadeInDown delay duration">
         Kyle Aisho
       </h1>
-      <p class="subtitle animate fadeInDown delay2 duration2">
+      <p class="subtitle animate fadeInDown delay duration2">
         Software Engineer
       </p>
     </div>
   </section>
-  <div class="container">
-    <div class="content animate fadeInUp delay2 duration2">
+  <div class="container hidden" id="about">
+    <div class="content animate fadeInUp delay duration2">
       <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac,
         erat. Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem. Etiam egestas wisi a erat. Phasellus
@@ -64,7 +65,52 @@
         vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Aliquam in lorem sit amet leo accumsan lacinia. Praesent
         id justo in neque elementum ultrices. Morbi scelerisque luctus velit. Fusce tellus odio, dapibus id fermentum quis,
         suscipit id erat. Integer imperdiet lectus quis justo.
+
       </p>
+    </div>
+  </div>
+
+  <div class="container hidden animate fadeInUp delay duration2" id="projects">
+    <div class="content">
+      <div class="columns">
+        <div class="column">
+          <article class="message is-link">
+            <div class="message-body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+              fringilla. Nullam gravida purus diam, et dictum
+              <a>felis venenatis</a> efficitur. Aenean ac
+              <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula,
+              id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+            </div>
+          </article>
+        </div>
+        <div class="column">
+            <article class="message is-warning">
+              <div class="message-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                fringilla. Nullam gravida purus diam, et dictum
+                <a>felis venenatis</a> efficitur. Aenean ac
+                <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula,
+                id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+              </div>
+            </article>
+          </div>
+          <div class="column">
+              <article class="message is-primary">
+                <div class="message-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet
+                  fringilla. Nullam gravida purus diam, et dictum
+                  <a>felis venenatis</a> efficitur. Aenean ac
+                  <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula,
+                  id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+              </article>
+            </div>
+      </div>
+
     </div>
   </div>
 </body>
