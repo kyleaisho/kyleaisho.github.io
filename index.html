@@ -19,7 +19,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 </head>
 
-<body>
+<body onload="selectFirstSection()">
   <section class="section">
     <nav class="navbar is-fixed-top">
       <div class="navbar-brand" style="width:100%">
@@ -88,6 +88,8 @@
                 </div>
               </article>
             </div>
+          </div>
+          <div class="columns">
             <div class="column">
               <article class="message is-warning">
                 <div class="message-body">
@@ -100,6 +102,8 @@
                 </div>
               </article>
             </div>
+          </div>
+          <div class="columns">
             <div class="column">
               <article class="message is-primary">
                 <div class="message-body">
@@ -113,12 +117,13 @@
               </article>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
-    <div class="column main-section is-12 hidden animate duration2" id="contact"></div>
+  </div>
+
+  </div>
+  <div class="column main-section is-12 hidden animate duration2" id="contact"></div>
   </div>
 
 </body>

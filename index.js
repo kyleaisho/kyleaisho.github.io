@@ -4,7 +4,7 @@ const FADEINUP = 'fadeInUp';
 const MAIN_SECTION = 'main-section';
 const HIDDEN = 'hidden';
 
-function getElementByInnerText(text) {
+function getSectionByNavItem(text) {
   return document.querySelector(`#${text.toLowerCase()}`);
 }
 
@@ -51,5 +51,10 @@ function navbarItemClick(e) {
   const unselected = !e.classList.contains(SELECTED);
 
   unselectNavigationItems(unselected ? e: null);
-  updateSections(unselected ? getElementByInnerText(e.innerText) : null); 
+  updateSections(unselected ? getSectionByNavItem(e.innerText) : null); 
+}
+
+function selectFirstSection() {
+  const elem = Array.from(document.querySelectorAll(".navbar .navbar-item")).find(e => e.innerText === 'About');
+  navbarItemClick(elem);
 }
